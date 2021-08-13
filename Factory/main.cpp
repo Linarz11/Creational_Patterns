@@ -127,10 +127,16 @@ void main()
 	//cout << sizeof(HumanType) << endl;
 	const int n = 10;
 	Human* human[n]{};
+	unsigned int traveller_count = 0;
+	unsigned int pollice_officer_count = 0;
+	unsigned int bandit_count = 0;
 	for (int i = 0; i < n; i++)
 	{
 		human[i] = humanFactory(HumanType(rand() % 3 ));
 		human[i]->info();
+		if (typeid(*human[i])) == typeid(Traveller))traveller_count++;
+		if (typeid(*human[i])) == typeid(PolliceOfficer))pollice_officer_count++;
+		if (typeid(*human[i])) == typeid(Bandit))bandit_count++;
 	}
 	for (int i = 0; i < n; i++)
 	{
