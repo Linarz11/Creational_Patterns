@@ -134,10 +134,14 @@ void main()
 	{
 		human[i] = humanFactory(HumanType(rand() % 3 ));
 		human[i]->info();
-		if (typeid(*human[i])) == typeid(Traveller))traveller_count++;
-		if (typeid(*human[i])) == typeid(PolliceOfficer))pollice_officer_count++;
-		if (typeid(*human[i])) == typeid(Bandit))bandit_count++;
+		if (typeid(*human[i]) == typeid(class Traveller))traveller_count++;
+		if (typeid(*human[i]) == typeid(class PolliceOfficer))pollice_officer_count++;
+		if (typeid(*human[i]) == typeid(class Bandit))bandit_count++;
 	}
+	cout << "Travellers: "  << traveller_count << endl;
+	cout << "Officers: "  << pollice_officer_count << endl;
+	cout << "Bandits: " << bandit_count << endl;
+
 	for (int i = 0; i < n; i++)
 	{
 		delete human[i];
